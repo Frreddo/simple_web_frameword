@@ -1,0 +1,2 @@
+[run]
+omit = test_framework.py, conftest.py, app.py, wsgi_demo.py
