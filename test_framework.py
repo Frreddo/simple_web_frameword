@@ -178,3 +178,26 @@ def test_middleware_methods_are_called(api, client):
 
     assert process_request_called is True
     assert process_response_called is True
+
+
+def test_allowed_methods_for_function_based_handlers(api, client):
+    @api.route("/home", allowed_methods=["post"])
+    def home(request, response):
+        response.text = "Hello"
+
+    with pytest.raises(AttributeError):
+        client.get("http://testserver/home")
+
+    assert client.post("http://testserver/home").text == "Hello"
+
+def test_all_methods_if_not_specified_for_function_based_handlers(api, client):
+    @api.route("/home")
+    def home(request, response):
+        response.text = "Hello"
+
+    assert client.get("http://testserver/home").text == "Hello"
+    assert client.post("http://testserver/home").text == "Hello"
+    assert client.put("http://testserver/home").text == "Hello"
+    assert client.delete("http://testserver/home").text == "Hello"
+    assert client.patch("http://testserver/home").text == "Hello"
+    assert client.options("http://testserver/home").text == "Hello"
