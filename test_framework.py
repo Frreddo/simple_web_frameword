@@ -1,7 +1,7 @@
 import pytest
 
-from api import API
-from middleware import Middleware
+from frameworkk.api import API
+from frameworkk.middleware import Middleware
 
 
 FILE_DIR = "css"

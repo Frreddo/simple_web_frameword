@@ -1,6 +1,6 @@
 import pytest
 
-from api import API
+from frameworkk.api import API
 
 
 @pytest.fixture

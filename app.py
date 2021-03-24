@@ -1,5 +1,5 @@
-from api import API
-from middleware import Middleware
+from frameworkk.api import API
+from frameworkk.middleware import Middleware
 
 app = API(templates_dir='templates')
 

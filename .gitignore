@@ -1,4 +1,7 @@
 .pytest_cache/
 .coverage
 .idea/
+.eggs/
+build/
 __pycache__/
+frameworkk.egg-info/

@@ -8,8 +8,8 @@ from webob import Request
 from whitenoise import WhiteNoise
 from wsgiadapter import WSGIAdapter as RequestsWSGIAdapter
 
-from middleware import Middleware
-from response import Response
+from .middleware import Middleware
+from .response import Response
 
 
 class API:
